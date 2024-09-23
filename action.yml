@@ -1,0 +1,33 @@
+name: 'Build and push docker image to ghcr'
+description: 'Github action that builds and pushes a docker image to github container registry'
+inputs:
+  github-push-secret:
+    description: 'GHCR_TOKEN token that has write:packages scope to authenticate against ghcr'
+    required: true
+  docker-image-name:
+    description: 'Docker image name'
+    required: true
+  docker-image-tag:
+    description: 'Docker image tag'
+    default: 'latest'
+    required: false
+  dockerfile-path:
+    description: 'Dockerfile path and name'
+    default: "Dockerfile"
+    required: false
+  build-context:
+    description: 'Path to the build context'
+    default: "."
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.github-push-secret }}
+    - ${{ inputs.docker-image-name }}
+    - ${{ inputs.docker-image-tag }}
+    - ${{ inputs.dockerfile-path }}
+    - ${{ inputs.build-context }}
+branding:
+  icon: 'box'
+  color: 'blue'
