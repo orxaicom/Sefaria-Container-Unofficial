@@ -1,0 +1,20 @@
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build And Push The Image
+        uses: orxaicom/Sefaria-Docker-Unofficial@main
+        with:
+          github-push-secret: ${{ secrets.GHCR_TOKEN }}
+          docker-image-name: sefaria-docker-unofficial
+          docker-image-tag: latest
+          dockerfile-path: ./deps/Dockerfile
+          build-context: ./deps
