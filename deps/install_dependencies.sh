@@ -46,6 +46,8 @@ mongod --repair
 rm -rf dump dump_small.tar.gz
 
 # Install the python requirements
+# We use /workspaces because of devconainers
+mkdir -p /workspaces && cd /workspaces
 curl -OL "https://github.com/Sefaria/Sefaria-Project/archive/refs/heads/master.zip"
 unzip master.zip > /dev/null && rm master.zip
 mv Sefaria-Project-master Sefaria-Project
@@ -55,9 +57,9 @@ chmod 777 log
 curl -OL "https://github.com/orxaicom/Sefaria-Docker-Unofficial/archive/refs/heads/main.zip"
 unzip main.zip >/dev/null && rm main.zip
 mv Sefaria-Docker-Unofficial-main/local_settings.py sefaria && rm -rf Sefaria-Docker-Unofficial-main
-../python3.8 -m pip install -r requirements.txt
+../../python3.8 -m pip install -r requirements.txt
 mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db
-../python3.8 manage.py migrate
+../../python3.8 manage.py migrate
 
 # npm
 npm install
@@ -70,9 +72,7 @@ cd .. && rm -rf Sefaria-Project
 chown -R root:root /usr/local/lib/node_modules
 
 # Clean the unwanted packages
-# Note: didn't remove curl and unzip yet, to download local_settings.py from Sefaria-Docker-Unofficial,
-# Remove it after convincing Sefaria to change local_settings_example.py to a working default
-apt-get -y remove --purge git gnupg
+apt-get -y remove --purge unzip git gnupg curl
 apt-get -y autoremove
 apt-get -y autoclean
 apt-get -y clean
