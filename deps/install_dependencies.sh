@@ -70,9 +70,9 @@ cd .. && rm -rf Sefaria-Project
 chown -R root:root /usr/local/lib/node_modules
 
 # Clean the unwanted packages
-# Note: didn't remove curl yet, to download local_settings.py from Sefaria-Docker-Unofficial,
+# Note: didn't remove curl and unzip yet, to download local_settings.py from Sefaria-Docker-Unofficial,
 # Remove it after convincing Sefaria to change local_settings_example.py to a working default
-apt-get -y remove --purge unzip git gnupg
+apt-get -y remove --purge git gnupg
 apt-get -y autoremove
 apt-get -y autoclean
 apt-get -y clean
