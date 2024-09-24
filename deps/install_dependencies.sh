@@ -69,6 +69,9 @@ cd .. && rm -rf Sefaria-Project
 # https://github.com/moby/moby/issues/45757
 chown -R root:root /usr/local/lib/node_modules
 
+# This is for DevContainers to use as workspace
+mkdir /app
+
 # Clean the unwanted packages
 apt-get -y remove --purge unzip git gnupg curl
 apt-get -y autoremove
