@@ -52,8 +52,7 @@ curl -OL "https://github.com/Sefaria/Sefaria-Project/archive/refs/heads/master.z
 unzip master.zip > /dev/null && rm master.zip
 mv Sefaria-Project-master Sefaria-Project
 cd Sefaria-Project
-mkdir log
-chmod 777 log
+mkdir log && chmod 777 log
 curl -OL "https://github.com/orxaicom/Sefaria-Container-Unofficial/archive/refs/heads/main.zip"
 unzip main.zip >/dev/null && rm main.zip
 mv Sefaria-Container-Unofficial-main/local_settings.py sefaria && rm -rf Sefaria-Container-Unofficial-main
