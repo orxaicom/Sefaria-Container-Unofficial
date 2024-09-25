@@ -1,4 +1,4 @@
-# Sefaria Docker Unofficial
+# Sefaria Container Unofficial
 Builds and publishes a docker container to run Sefaria
 (Experimental)
 
