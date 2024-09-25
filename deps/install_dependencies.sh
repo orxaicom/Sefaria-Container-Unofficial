@@ -20,8 +20,8 @@ apt-get -y install \
 # Use the python3.8 as recommended by Sefaria
 curl -OL "https://github.com/niess/python-appimage/releases/download/python3.8/python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage"
 chmod +x python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage
-./python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage --appimage-extract
-rm ./python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage
+python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage --appimage-extract
+rm python3.8.13-cp38-cp38-manylinux2010_x86_64.AppImage
 mv squashfs-root python3.8.13-cp38-cp38-manylinux2010_x86_64.AppDir
 ln -s python3.8.13-cp38-cp38-manylinux2010_x86_64.AppDir/AppRun python3.8
 
@@ -57,22 +57,13 @@ chmod 777 log
 curl -OL "https://github.com/orxaicom/Sefaria-Docker-Unofficial/archive/refs/heads/main.zip"
 unzip main.zip >/dev/null && rm main.zip
 mv Sefaria-Docker-Unofficial-main/local_settings.py sefaria && rm -rf Sefaria-Docker-Unofficial-main
-../../python3.8 -m pip install -r requirements.txt
+/python3.8 -m pip install -r requirements.txt
 mongod --fork --logpath /var/log/mongodb.log --dbpath /data/db
-../../python3.8 manage.py migrate
-
-# npm
-npm install
-npm run setup
-
+/python3.8 manage.py migrate
 cd .. && rm -rf Sefaria-Project
 
-# This is to fix the Lchown problem with docker
-# https://github.com/moby/moby/issues/45757
-chown -R root:root /usr/local/lib/node_modules
-
 # Clean the unwanted packages
-apt-get -y remove --purge unzip git gnupg curl
+apt-get -y remove --purge unzip gnupg curl
 apt-get -y autoremove
 apt-get -y autoclean
 apt-get -y clean
