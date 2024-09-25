@@ -44,7 +44,6 @@ mongod --shutdown --dbpath /data/db
 # If the db is messed up, suspect this
 mongod --repair
 rm -rf dump dump_small.tar.gz
-# TODO see whether we can delete these: /data/db/journal /data/db/diagnostic.data
 
 # Install the python requirements
 # We use /workspaces because of devconainers
