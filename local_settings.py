@@ -48,7 +48,7 @@ DOMAIN_LANGUAGES = {
 ################ These are things you can change! ###########################################################################
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1","0.0.0.0"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0", ".github.dev"]
 
 ADMINS = (
      ('Your Name', 'you@example.com'),
@@ -129,7 +129,7 @@ SITE_PACKAGE = "sites.sefaria"
 
 ################ These are things you DO NOT NEED to touch unless you know what you are doing. ##############################
 DEBUG = False
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '.github.dev']
 OFFLINE = False
 DOWN_FOR_MAINTENANCE = False
 MAINTENANCE_MESSAGE = ""
