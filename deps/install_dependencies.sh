@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 apt-get update
 apt-get -y upgrade
