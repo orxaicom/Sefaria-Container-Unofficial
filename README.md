@@ -29,7 +29,8 @@ The container is an installation of requirements of running
 * If you have problems with Codespaces in your browser, disable adblocks,
   and on FireFox Disable Tracking Protection (Shield logo near the URL).
 * The image is big (~3.5 Gigs) because it contains the database
-  and the installation takes 5 or 10 minutes on Codespaces.
+  and the packages. The installation takes 5 or 10 minutes on Codespaces.
+  We're working on making the image smaller and faster, see TODO bellow.
 * This repo publishes the image to ghcr (GitHub Container Registry),
   [link](https://github.com/orxaicom/Sefaria-Container-Unofficial/pkgs/container/sefaria-container-unofficial)
   on the right hand side of this page.
@@ -40,6 +41,8 @@ The container is an installation of requirements of running
 
 ## TODO
 * [ ] See whether we can delete these: /data/db/journal /data/db/diagnostic.data
+* [ ] Examine ways to make the image smaller (Use alpine instead of debian, Multi-stage builds)
+      and reduce the Dev Containers start-up time
 * [ ] Use `npm run watch-client` and `npm run watch` in
       [.devcontainer](https://github.com/orxaicom/Sefaria-Project/blob/master/.devcontainer/postCreate.sh)
       and test whether changing code results in change in the preview, realtime.
