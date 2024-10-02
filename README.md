@@ -1,6 +1,6 @@
 # Sefaria Container Unofficial
 
-![Running Sefaria inside codespaces](https://github.com/orxaicom/Sefaria-Container-Unofficial/blob/09cc909500e0b5ddab30415fae38a68ae4883b95/video.gif)
+![Running Sefaria inside Codespaces](https://github.com/orxaicom/Sefaria-Container-Unofficial/blob/09cc909500e0b5ddab30415fae38a68ae4883b95/video.gif)
 
 This repository builds and publishes a docker container.
 The container is an installation of requirements of running
@@ -9,7 +9,7 @@ The container is an installation of requirements of running
 
 ## Use cases:
 * You can go to [our fork of Sefaria-Project](https://github.com/orxaicom/Sefaria-Project)
-  which contains a .devcontainer folder that tells GitHub codespaces how to run it
+  which contains a .devcontainer folder that tells GitHub Codespaces how to run it
   inside this container, as you can see in the video above. This way you can experiment
   and develope Sefaria on your browser without going through the lengthy installation
   process and cluttering your system.
@@ -26,13 +26,16 @@ The container is an installation of requirements of running
   for Sefaria.
 
 ## NOTICE:
+* If you have problems with Codespaces in your browser, disable adblocks,
+  and on FireFox Disable Tracking Protection (Shield logo near the URL).
 * The image is big (~3.5 Gigs) because it contains the database
-  and the installation takes 5 or 10 minutes on codespaces.
+  and the installation takes 5 or 10 minutes on Codespaces.
 * This repo publishes the image to ghcr (GitHub Container Registry),
   [link](https://github.com/orxaicom/Sefaria-Container-Unofficial/pkgs/container/sefaria-container-unofficial)
   on the right hand side of this page.
 * The main script that builds the images is
   [install_dependencies.sh](https://github.com/orxaicom/Sefaria-Container-Unofficial/blob/main/deps/install_dependencies.sh)
+* All suggestions are welcomed, open an issue.
 * This is still an ongoing experimental and unofficial project.
 
 ## TODO
