@@ -7,7 +7,7 @@ The container is an installation of requirements of running
 [Sefaria-Project](https://github.com/Sefaria/Sefaria-Project) as
 [described on their website](https://developers.sefaria.org/docs/local-installation-instructions).
 
-## Use cases:
+## Use cases
 * You can go to [our fork of Sefaria-Project](https://github.com/orxaicom/Sefaria-Project)
   which contains a .devcontainer folder that tells GitHub Codespaces how to run it
   inside this container, as you can see in the video above. This way you can experiment
@@ -25,7 +25,7 @@ The container is an installation of requirements of running
   [desktop app](https://github.com/orxaicom/Sefaria-Desktop-Unofficial)
   for Sefaria.
 
-## NOTICE:
+## NOTICE
 * If you have problems with Codespaces in your browser, disable adblocks,
   and on FireFox Disable Tracking Protection (Shield logo near the URL).
 * The image is big (~3.5 Gigs) because it contains the database
