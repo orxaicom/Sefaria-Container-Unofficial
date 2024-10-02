@@ -38,5 +38,5 @@ The container is an installation of requirements of running
 ## TODO
 * [ ] See whether we can delete these: /data/db/journal /data/db/diagnostic.data
 * [ ] Use `npm run watch-client` and `npm run watch` in
-      [.devcontainer](https://github.com/orxaicom/Sefaria-Project/tree/master/.devcontainer)
+      [.devcontainer](https://github.com/orxaicom/Sefaria-Project/blob/master/.devcontainer/postCreate.sh)
       and test whether changing code results in change in the preview, realtime.
